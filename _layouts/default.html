@@ -1,126 +1,51 @@
 <!DOCTYPE html>
-<html lang="ta">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
-  {% include meta.html %}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml">
+    {% include meta.html %}
 
-  <style>
-    body {
-      font-family: 'Noto Sans Tamil', sans-serif;
-      background-color: #f9f9f9;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    .wrapper-masthead {
-      background-color: #004aad;
-      padding: 20px 0;
-    }
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-    .masthead {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
 
-    .site-avatar img {
-      width: 60px;
-      height: 60px;
-      border-radius: 6px;
-    }
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
 
-    .site-info {
-      color: white;
-      margin-left: 15px;
-    }
+          <div class="site-info">
+            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <p class="site-description">{{ site.description }}</p>
+          </div>
 
-    .site-name a {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: white;
-      text-decoration: none;
-    }
-
-    .site-description {
-      font-size: 0.95rem;
-      margin-top: 5px;
-      color: #ddd;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 15px;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .wrapper-footer {
-      background: #eee;
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    .footer svg {
-      fill: #444;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrapper-masthead">
-    <div class="container">
-      <header class="masthead clearfix">
-        <a href="{{ site.baseurl }}/" class="site-avatar">
-          <img src="{{ site.avatar }}" alt="Logo" />
-        </a>
-
-        <div class="site-info">
-          <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-          <p class="site-description">{{ site.description }}</p>
-        </div>
-
-        <nav>
-          <a href="{{ site.baseurl }}/">முகப்பு</a>
-          <a href="{{ site.baseurl }}/about">எங்களை பற்றி</a>
-        </nav>
-      </header>
+          <nav>
+            <a href="{{ site.baseurl }}/">Blog</a>
+            <a href="{{ site.baseurl }}/about">About</a>
+          </nav>
+        </header>
+      </div>
     </div>
-  </div>
 
-  <div id="main" role="main" class="container">
-    {{ content }}
-  </div>
-
-  <div class="wrapper-footer">
-    <div class="container">
-      <footer class="footer">
-        {% include svg-icons.html %}
-      </footer>
+    <div id="main" role="main" class="container">
+      {{ content }}
     </div>
-  </div>
 
-  {% include analytics.html %}
-</body>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          {% include svg-icons.html %}
+        </footer>
+      </div>
+    </div>
+
+    {% include analytics.html %}
+  </body>
 </html>
